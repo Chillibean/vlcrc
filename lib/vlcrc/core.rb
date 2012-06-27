@@ -38,7 +38,7 @@ module VLCRC
       if RUBY_PLATFORM =~ /(win|w)(32|64)$/
         %x{ start vlc --lua-config "rc={host='#{@host}:#{@port}',flatplaylist=0}" >nul 2>&1 }
       else
-        %x{ vlc --lua-config "rc={host='#{@host}:#{@port}',flatplaylist=0}" >/dev/null 2>&1 & }
+        %x{ vlc -I cli --lua-config "cli={host='#{@host}:#{@port}',flatplaylist=0}" >/dev/null 2>&1 & }
       end
       # TODO pre-lua rc interface (VLC version detection?)
       true
