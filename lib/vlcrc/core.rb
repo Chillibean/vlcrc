@@ -33,12 +33,12 @@ module VLCRC
 
     # Launch an instance of VLC with the RC interface configured for the
     # specified TCP socket unless there already is one.
-    def launch
+    def launch(screen_number = 1)
       return false if connected?
       if RUBY_PLATFORM =~ /(win|w)(32|64)$/
-        %x{ start vlc --lua-config "rc={host='#{@host}:#{@port}',flatplaylist=0}" >nul 2>&1 }
+        %x{ start vlc --no-osd --fullscreen --lua-config "rc={host='#{@host}:#{@port}',flatplaylist=0}" >nul 2>&1 }
       else
-        %x{ vlc -I cli --lua-config "cli={host='#{@host}:#{@port}',flatplaylist=0}" >/dev/null 2>&1 & }
+        %x{ vlc -I cli --no-osd --fullscreen --lua-config "cli={host='#{@host}:#{@port}',flatplaylist=0}" >/dev/null 2>&1 & }
       end
       # TODO pre-lua rc interface (VLC version detection?)
       true

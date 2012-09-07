@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    vlcrc (0.1.15)
+    vlcrc-cb (0.1.18)
       trollop (~> 1.16.2)
 
 GEM
@@ -23,7 +23,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.0.0)
+  bundler (~> 1.1.0)
   rake
   rspec (~> 2.5.0)
-  vlcrc!
+  vlcrc-cb!

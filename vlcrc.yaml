@@ -1,4 +1,4 @@
-name: vlcrc
+name: vlcrc-cb
 nice name: 'VLC-RC'
 
 summary: 'a ruby wrapper to the VLC TCP interface'
